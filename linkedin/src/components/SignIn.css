@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.SignInHeading{
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.SignInNav .Auth{
+    width: 210px;
+    padding-top: 12px;
+    padding-left: 110px;
+}
+.SignInCenter{
+    margin: auto;
+    background: #efeeee;
+    width: fit-content;
+    padding: 30px;
+    border-radius: 11px;
+}
+.SignInCenter input {
+    width: 397px;
+    padding: 7px;
+    border-radius: 5px;
+    margin-top: 6px;
+    margin-bottom: 27px;
+}
+.SignInCenter label{
+    color: #555454;
+}
+.SignInButton{
+    text-align: center;
+}
+
+.LoginBtn{
+    background: #0a66c2;
+    color: white;
+    width: 416px;
+    padding: 12px;
+    transition: 0.5s;
+    cursor: pointer;
+    border: none;
+    border-radius: 40px;
+    font-size: 20px;
+    margin-top: 16px;
+}
+.LoginBtn:hover{
+    background: #04407b;
+}
+.Already{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 33px;
+}
+.AlreadyLink{
+    text-decoration: none;
+    color: #0a66c2;
+    font-weight: bold;
+}
+.AlreadyLink:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 400px) {
+    .SignInHeading{
+        font-size: 17px;
+        letter-spacing: 0;
+        font-weight: bold;
+    }
+    .SignInNav .Auth{
+        width: 100px;
+        margin-left: 0;
+        padding-left: 14px;
+        margin-bottom: 43px;
+    }
+    .SignInCenter input{
+        width: 298px;
+    }
+    .LoginBtn{
+        width: 298px;
+    }
+    .SignInCenter{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

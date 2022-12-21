@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import './SignUp.css';
+import Logo from './LinkedLogo.jpg'
 import { userAuth, database } from '../firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { collection, addDoc } from "firebase/firestore";
@@ -62,6 +63,9 @@ const SignUp = () => {
     return (
         <div>
             <div className="SignUpContainer">
+                <div className="SignUpNav">
+                    <img src={Logo} className='Auth' alt="" />
+                </div>
                 <h1 className="SignUpHeading">
                     Make the most of your professional life
                 </h1>
@@ -84,7 +88,7 @@ const SignUp = () => {
                     <div className="SignUpButton">
                         <button onClick={handleSubmit} className="JoinBtn">Join</button>
                     </div>
-                    <p>Already have an Account?<Link to="/signin"> SignIn</Link></p>
+                    <p className='Already'>Already have an Account?<Link className='AlreadyLink' to="/signin"> SignIn</Link></p>
                 </div>
             </div>
         </div>

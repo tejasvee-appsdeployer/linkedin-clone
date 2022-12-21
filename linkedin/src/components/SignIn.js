@@ -1,5 +1,6 @@
 import './SignIn.css';
 import React, { useState } from 'react'
+import Logo from './LinkedLogo.jpg'
 import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
@@ -36,6 +37,9 @@ const SignIn = () => {
   return (
     <div>
       <div className="SignInContainer">
+        <div className="SignInNav">
+          <img src={Logo} className='Auth' alt="" />
+        </div>
         <h1 className="SignInHeading">
           Welcome to your professional community
         </h1>
@@ -54,7 +58,7 @@ const SignIn = () => {
             <button onClick={handleSubmit} className="LoginBtn">Join</button>
           </div>
 
-          <p>Don't have an Account?<Link to="/signup"> SignUp</Link></p>
+          <p className='Already'>Don't have an Account?<Link className='AlreadyLink' to="/signup"> SignUp</Link></p>
         </div>
       </div>
     </div>
