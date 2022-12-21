@@ -55,7 +55,7 @@ const SignIn = () => {
           </div>
 
           <div className="SignInButton">
-            <button onClick={handleSubmit} className="LoginBtn">Join</button>
+            <button onClick={handleSubmit} className="LoginBtn">SignIn</button>
           </div>
 
           <p className='Already'>Don't have an Account?<Link className='AlreadyLink' to="/signup"> SignUp</Link></p>

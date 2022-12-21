@@ -35,6 +35,7 @@
     color: white;
     width: 416px;
     padding: 12px;
+    letter-spacing: 2px;
     transition: 0.5s;
     cursor: pointer;
     border: none;
