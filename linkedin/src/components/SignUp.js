@@ -36,6 +36,7 @@ const SignUp = () => {
                 await updateProfile(User, {
                     displayName: Name
                 });
+                console.log(res)
                 toast.success("Signed Up");
                 const data = collection(database, 'AuthUsers');
                 let date = new Date();
