@@ -20,7 +20,6 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const [userdata, setUserData] = useState(initialState);
-    const [done, setDone] = useState(false);
 
     const { Name, Email, Pass } = userdata;
 
@@ -54,7 +53,7 @@ const SignUp = () => {
                 })
                 navigate('/signin');
             }).catch((err) => {
-                console.log(done, "Falseeee");
+                console.log("Falseeee");
                 toast.error(err.message);
             })
         }
