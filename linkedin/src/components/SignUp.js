@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import './SignUp.css';
 import Logo from '../Images/LinkedLogo.jpg';
+import UserPic from '../Images/User.png';
 import { userAuth, database } from '../firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { collection, addDoc } from "firebase/firestore";
@@ -12,7 +13,9 @@ const initialState = {
     Name: "",
     Email: "",
     Pass: "",
-    Date_Joined: ""
+    Date_Joined: "",
+    Image: UserPic,
+    Heading: "-----"
 }
 
 const SignUp = () => {
@@ -20,7 +23,6 @@ const SignUp = () => {
     const navigate = useNavigate();
 
     const [userdata, setUserData] = useState(initialState);
-    const [done, setDone] = useState(false);
 
     const { Name, Email, Pass } = userdata;
 
@@ -34,7 +36,8 @@ const SignUp = () => {
             createUserWithEmailAndPassword(userAuth, Email, Pass).then(async (res) => {
                 const User = res.user;
                 await updateProfile(User, {
-                    displayName: Name
+                    displayName: Name,
+                    photoURL: UserPic
                 });
                 console.log(res)
                 toast.success("Signed Up");
@@ -46,7 +49,9 @@ const SignUp = () => {
                 addDoc(data, {
                     UserName: Name,
                     UserEmail: Email,
-                    Date_Joined: newDate
+                    Date_Joined: newDate,
+                    Image: UserPic,
+                    Heading: ''
                 }).then(() => {
                     navigate('/signin');
                 }).catch((err) => {

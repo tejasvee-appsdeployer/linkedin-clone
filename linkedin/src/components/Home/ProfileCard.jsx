@@ -1,19 +1,37 @@
-import React from "react";
-import profile from '../../Images/profile.jpg'
+import React, { useEffect, useState } from "react";
+import UserImage from '../../Images/User.png'
 import './ProfileCard.scss';
+
 import { SocialIcon } from 'react-social-icons';
+import {userAuth} from '../../firebase';
 
 
 const ProfileCard = () => {
+
+  const [userName, setUserName] = useState("");
+  // const [userImage, setUserImage] = useState(null);
+  // const [userContent, setUserContent] = useState("");
+
+  useEffect(() => {
+    userAuth.onAuthStateChanged((user) => {
+      if(user){
+        setUserName(user.displayName);
+      }
+      else{
+        setUserName("");
+      }
+    })
+  })
+
   return (
     <>
       <div className="card-wrap" >
         <div className="img-wrap">
-          <img src={profile} className="" alt="profile" />
+          <img src={UserImage} className="" alt="profile" />
         </div>
         <div className="card-body">
-            <h4>Abhimanyu Sharma</h4>
-            <h5 style={{fontWeight:'200'}}>Computer Science Engineer</h5>
+            <h4>{userName}</h4>
+            <h5 style={{fontWeight:'200'}}></h5>
             <div className="social">
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="dribbble"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="instagram"/>
