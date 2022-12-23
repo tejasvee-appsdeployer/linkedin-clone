@@ -9,13 +9,14 @@ import {userAuth} from '../../firebase';
 const ProfileCard = () => {
 
   const [userName, setUserName] = useState("");
-  // const [userImage, setUserImage] = useState(null);
+  const [userImage, setUserImage] = useState(null);
   // const [userContent, setUserContent] = useState("");
 
   useEffect(() => {
     userAuth.onAuthStateChanged((user) => {
       if(user){
         setUserName(user.displayName);
+        setUserImage(UserImage);
       }
       else{
         setUserName("");
@@ -27,7 +28,7 @@ const ProfileCard = () => {
     <>
       <div className="card-wrap" >
         <div className="img-wrap">
-          <img src={UserImage} className="" alt="profile" />
+          <img src={userImage} className="" alt="profile" />
         </div>
         <div className="card-body">
             <h4>{userName}</h4>
@@ -38,7 +39,7 @@ const ProfileCard = () => {
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="facebook"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="google"/>
             </div>
-            <button className="btn btn-primary" style={{borderRadius:'100px' ,width:'100%'}}>View profile</button>
+            <button className="btn btn-primary" id="viewprofile-btn">View profile</button>
         </div>
       </div>
     </>
