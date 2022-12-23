@@ -1,4 +1,57 @@
-.feed-wrap{
-    width: 50%;
-    border: 0.5px solid black;
+@import './Common.scss';
+
+.feed-wrap {
+
+    width: 45%;
+	background-color:$dark;
+	// border: 0.5px solid black;
+	border-radius: 25px;
+	padding: 0.5rem;
+	.profile-wrap {
+		display: flex;
+		margin-top: 20px;
+		justify-content: space-between;
+		img {
+			width: 50px;
+			height: 50px;
+			border-radius: 100px;
+			object-fit: cover;
+			margin-right: 10px;
+		}
+		#follow-btn{
+			background-color: $lighter;
+			border-color: $lighter;
+			border-radius: 25px;
+		}
+	}
+	.post-wrapper {
+		margin: auto;
+		height: fit-content;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.count-wrapper {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 2px;
+	}
+	.btn-wrapper {
+		display: flex;
+		justify-content: space-around;
+		margin-bottom: 5px;
+		button{
+			color: $white;
+			width:100%;
+		
+			background-color: transparent;
+			border: none;
+			i{
+				transform: scale(1);
+			}
+
+		}
+	}
 }

@@ -20,7 +20,7 @@ const ProfileCard = () => {
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="facebook"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="google"/>
             </div>
-            <button className="btn btn-primary" style={{borderRadius:'100px' ,width:'100%'}}>View profile</button>
+            <button className="btn btn-primary" id="viewprofile-btn">View profile</button>
         </div>
       </div>
     </>

@@ -22,8 +22,11 @@ const CreatePost = () => {
 
           <div className="post-input-wrap">
             <textarea className="post-text" placeholder="Write ..."></textarea>
-            <input type="file" name="file" id="file-upload" />
-            <button id='post-btn' className="btn btn-secondary">post</button>
+            <label htmlFor="file-upload" className="btn btn-secondary">
+              Upload
+               <input type="file" name="file" id="file-upload" />
+            </label>
+            <button id='post-btn' className="btn btn-success">post</button>
           </div>
         </div>
       </div>

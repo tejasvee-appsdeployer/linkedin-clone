@@ -38,7 +38,7 @@ const SignIn = () => {
     <div>
       <div className="SignInContainer">
         <div className="SignInNav">
-          <img src={Logo} className='Auth' alt="" />
+          ConnectIn
         </div>
         <h1 className="SignInHeading">
           Welcome to your professional community

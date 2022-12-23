@@ -7,7 +7,8 @@ import SignUp from './components/SignUp';
 import Feed from './components/Feed';
 import Protected from './Protected';
 import BlogPost from './components/BlogPost';
-import Home from './components/Home/Home'
+import Home from './components/Home/Home';
+import './components/Home/Common.scss'
 
 function App() {
   return (

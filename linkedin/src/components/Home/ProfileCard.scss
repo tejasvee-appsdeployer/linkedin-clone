@@ -1,17 +1,15 @@
 @import './Common.scss' ;
 
 .card-wrap{
+    background-color: $dark;
+    width: 25%;
+    height: fit-content;
+    padding: 2rem;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 0.5px solid transparent;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 5px;
-    border-radius: 25px;
-    width: 23%;
-    padding: 2rem;
-    
     .img-wrap{
         // border: 0.2px solid black;
         border-radius: 100px;
@@ -34,6 +32,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: fit-content;
+        h5{
+            width: max-content;
+        }
 
         .social{
             margin: 1rem 0rem;
@@ -46,6 +48,12 @@
             
                 
             }
+        }
+        #viewprofile-btn{
+            width: 100%;
+            border-radius: 25px;
+            background-color: $lighter;
+            border-color: $lighter;
         }
     }
    
@@ -65,11 +73,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 0.5px solid transparent;
-        box-sizing: border-box;
-        box-shadow: 0px 0px 5px;
         border-radius: 25px;
-        width: 30%;
+        width: auto;
         .card-body{
             h4{
                 font-size: medium;
@@ -93,10 +98,12 @@
     
         .card-body{
             width: fit-content;
+            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin:auto;
     
             .social{
                 margin: 1rem 0rem;
@@ -105,6 +112,10 @@
                     margin: 3px;
                     
                 }
+            }
+            #viewprofile-btn{
+                width: 100%;
+                border-radius: 25px;
             }
         }
        
