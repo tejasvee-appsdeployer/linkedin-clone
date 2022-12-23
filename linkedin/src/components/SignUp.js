@@ -38,7 +38,7 @@ const SignUp = () => {
                 });
                 console.log(res)
                 toast.success("Signed Up");
-                const data = collection(database, 'AuthUsers');
+                const data = collection(database, 'AuthenticatedUsers');
                 let date = new Date();
                 let prev = date.getDate();
                 date.setDate(prev);
@@ -48,14 +48,12 @@ const SignUp = () => {
                     UserEmail: Email,
                     Date_Joined: newDate
                 }).then(() => {
-                    console.log("User Added");
                     navigate('/signin');
                 }).catch((err) => {
                     console.log(err.message);
                 })
                 navigate('/signin');
             }).catch((err) => {
-                console.log(done, "Falseeee");
                 toast.error(err.message);
             })
         }

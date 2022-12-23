@@ -26,11 +26,11 @@ const BlogPost = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const ImageRef = ref(storage, `blogImage/${image.name}`)
+        const ImageRef = ref(storage, `BlogImage/${image.name}`)
         uploadBytes(ImageRef, image).then(() => {
             alert("Image Uploaded");
             getDownloadURL(ImageRef).then((url) => {
-                const data = collection(database, 'UserBlogPost');
+                const data = collection(database, 'UsersPost');
                 addDoc(data, {
                     Username: userName,
                     ImageUrl: url,
