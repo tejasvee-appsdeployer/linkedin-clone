@@ -11,7 +11,7 @@ function App() {
       <div className="App">
         <ToastContainer position="top-center" />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/home" element={<Home />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
