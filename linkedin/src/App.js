@@ -10,17 +10,17 @@ import BlogPost from './components/BlogPost';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <div className="App">
-      <ToastContainer position='top-center' />
-      <Routes>
-        <Route path='/' element={<Protected Component={Feed}/>}/>      
-        <Route path='/signin' element={<SignIn/>}/>
-        <Route path='/signup' element={<SignUp/>}/>
-        <Route path='/blogpost' element={<BlogPost/>}/>
-      </Routes>
+        <ToastContainer position='top-center' />
+        <Routes>
+          <Route path='/' element={<Protected Component={Feed} />} />
+          <Route path='/signin' element={<SignIn />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/blogpost' element={<BlogPost />} />
+        </Routes>
       </div>
-    </BrowserRouter>
+    </>
   );
 }
 

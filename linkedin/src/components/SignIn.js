@@ -1,6 +1,6 @@
 import './SignIn.css';
 import React, { useState } from 'react'
-import Logo from './LinkedLogo.jpg'
+import Logo from '../Images/LinkedLogo.jpg';
 import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
