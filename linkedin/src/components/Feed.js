@@ -18,12 +18,11 @@ const Feed = () => {
     })
   })
   const [allPosts, setAllPosts] = useState([]);
-  const data = collection(database, 'UserBlogPost');
+  const data = collection(database, 'UsersPost');
   getDocs(data).then((snapshot) => {
     let res = [];
     snapshot.docs.forEach((item) => {
       res.push({ ...item.data(), id: item.id });
-
     })
     setAllPosts(res);
   });
