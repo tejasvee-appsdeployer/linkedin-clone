@@ -15,10 +15,10 @@ const ProfileCard = () => {
             <h4>Abhimanyu Sharma</h4>
             <h5 style={{fontWeight:'200'}}>Computer Science Engineer</h5>
             <div className="social">
-                <SocialIcon className="social-icon" network="dribbble"/>
-                <SocialIcon className="social-icon" network="instagram"/>
-                <SocialIcon className="social-icon" network="facebook"/>
-                <SocialIcon className="social-icon" network="google"/>
+                <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="dribbble"/>
+                <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="instagram"/>
+                <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="facebook"/>
+                <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="google"/>
             </div>
             <button className="btn btn-primary" style={{borderRadius:'100px' ,width:'100%'}}>View profile</button>
         </div>

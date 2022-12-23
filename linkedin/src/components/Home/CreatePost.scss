@@ -1,21 +1,23 @@
+@import "./Common.scss";
+
 .createpost-wrap {
   width: 23%;
   border: 0.5px solid transparent;
   box-sizing: border-box;
   box-shadow: 0px 0px 5px;
   border-radius: 25px;
+
   .card {
     border-radius: 25px;
     border: none;
   }
   .card-body {
-
     .card-user-info {
-        width: max-content;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        
+      width: max-content;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
       .user-img-wrap {
         margin: 0.2rem;
         img {
@@ -24,9 +26,9 @@
           object-fit: cover;
           border: none;
           border-radius: 100px;
-        }   
+        }
       }
-      .name-post-visibility{
+      .name-post-visibility {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -34,10 +36,42 @@
       }
     }
 
-    .post-input-wrap{
-        
-            
-        
+    .post-input-wrap {
+      background: transparent;
+      textarea{
+        width: 100%;
+        height: 200px;
+        border: 0.1px solid gray;
+        border-radius: 10px;
+        padding: 10px;
+      }
+      input[type=file]{
+        border:none;
+      }
+      #post-btn{
+        width:100%;
+      }
+
     }
+  }
+}
+
+// Mobile view
+@media (min-width: 0px) and (max-width: $mobile) {
+  .createpost-wrap {
+    display: none;
+  }
+}
+
+// tablet view
+@media (min-width: $mobile) and (max-width:$tablet) {
+  .createpost-wrap {
+    display: none;
+  }
+}
+// desktop view
+@media (min-width: $tablet) and (max-width: $desktop) {
+  .createpost-wrap {
+    display: block;
   }
 }
