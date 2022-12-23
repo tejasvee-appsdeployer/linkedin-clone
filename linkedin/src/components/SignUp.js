@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 import './SignUp.css';
-import Logo from './LinkedLogo.jpg'
+import Logo from '../Images/LinkedLogo.jpg';
 import { userAuth, database } from '../firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { collection, addDoc } from "firebase/firestore";
@@ -36,6 +36,7 @@ const SignUp = () => {
                 await updateProfile(User, {
                     displayName: Name
                 });
+                console.log(res)
                 toast.success("Signed Up");
                 const data = collection(database, 'AuthUsers');
                 let date = new Date();
