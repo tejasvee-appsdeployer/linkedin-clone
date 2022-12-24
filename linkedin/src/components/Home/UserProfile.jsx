@@ -69,7 +69,7 @@ const UserProfile = () => {
               <p className="card-text">
                 <p className="description">{userContent}</p>
                 <i class="fa-solid fa-house-laptop"></i>
-                {userCollege}
+                {userCollege}f
               </p>
               <div className="btn btn-primary">
                 <i class="fa-solid fa-bolt"></i> Message

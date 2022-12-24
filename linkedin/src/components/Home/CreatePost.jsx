@@ -5,21 +5,28 @@ import { toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage, database, userAuth } from '../../firebase';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDoc, doc } from "firebase/firestore";
 
 const CreatePost = () => {
   const navigate = useNavigate();
   const [userId, setUserId] = useState(null);
   const [userName, setUserName] = useState("");
+  const [userImage, setUserImage] = useState();
+  const [userHeading, setUserHeading] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
-  const [userImage, setUserImage] = useState();
   useEffect(() => {
     userAuth.onAuthStateChanged((user) => {
       if (user) {
-        setUserName(user.displayName);
-        setUserImage(UserImage);
-        setUserId(user.uid)
+        setUserId(user.uid);
+        const DocRef = doc(database, 'ConnectInUsers', userId);
+        getDoc(DocRef).then((object) => {
+          setUserName(object.data().UserName);
+          setUserImage(object.data().UserImage);
+          setUserHeading(object.data().Heading);
+        }).catch((err) => {
+          console.log(err.message);
+        })
       } else {
         setUserName("");
       }
@@ -41,6 +48,8 @@ const CreatePost = () => {
             let newDate = date.toJSON().slice(0, 10)
             addDoc(data, {
               Username: userName,
+              UserImage: userImage,
+              UserHeading: userHeading,
               ImageUrl: url,
               Content: content.Content,
               UserId: userId,

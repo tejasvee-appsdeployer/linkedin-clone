@@ -27,9 +27,6 @@ const ProfileCard = () => {
           console.log(err.message);
         })
       }
-      else{
-        setUserName("");
-      }
     })
   }, [])
   return (
@@ -39,8 +36,8 @@ const ProfileCard = () => {
           <img src={userImage} className="" alt="profile" />
         </div>
         <div className="card-body">
-            <h4>{userName}.</h4>
-            <h5 style={{fontWeight:'200'}}>{userContent}.</h5>
+            <h4>{userName}</h4>
+            <h5 style={{fontWeight:'200'}}>{userContent}</h5>
             <div className="social">
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="dribbble"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="instagram"/>

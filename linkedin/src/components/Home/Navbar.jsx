@@ -20,7 +20,7 @@ const NavBar = () => {
 				fluid
 				className="navbar-wrap d-flex justify-content-around ms-4"
 			>
-				<Navbar.Brand href="#" className="navbar-brand">
+				<Navbar.Brand href="/home" className="navbar-brand">
 					ConnectIn
 				</Navbar.Brand>
 				<Form className="d-flex search-wrap">
