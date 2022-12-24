@@ -5,7 +5,7 @@ import ProfileCard from './ProfileCard'
 import './Home.scss'
 import NavBar from './Navbar'
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
     <NavBar/>

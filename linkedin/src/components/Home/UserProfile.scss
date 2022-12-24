@@ -1,0 +1,39 @@
+.parent-card {
+	width: 50%;
+	.profile-card-wrapper {
+		width: 100%;
+		height: 450px;
+		.background-img-wrap {
+			.background-img {
+				max-width: 100%;
+				height: 180px;
+				object-fit: cover;
+			}
+		}
+		.profile-img-wrap {
+			position: absolute;
+			top: 80px;
+			left: 10px;
+			border: 5px solid white;
+			border-radius: 100%;
+			.profile-img {
+				border-radius: 100%;
+				width: 150px;
+				height: 150px;
+				object-fit: cover;
+			}
+		}
+		.card-body {
+			.left {
+				margin-top: 55px;
+			}
+		}
+	}
+	.activity-card {
+		.activity-post-thumbnail {
+			width: 120px;
+			height: 100px;
+			object-fit: contain;
+		}
+	}
+}

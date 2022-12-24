@@ -5,7 +5,7 @@ import './SignUp.css';
 import UserPic from '../Images/User.png';
 import { userAuth, database } from '../firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, updateDoc, doc, setDoc } from "firebase/firestore";
 import { useNavigate, Link } from 'react-router-dom';
 
 
@@ -13,18 +13,20 @@ const initialState = {
     Name: "",
     Email: "",
     Pass: "",
-    Date_Joined: "",
-    Image: UserPic,
-    Heading: "-----"
+    Image: UserPic
 }
 
-const SignUp = () => {
+const SignUp = (props) => {
 
     const navigate = useNavigate();
 
     const [userdata, setUserData] = useState(initialState);
+    const [userHeading, setUserHeading] = useState("");
+    const [userCollege, setUserCollege] = useState("");
+    const [userId, setUserId] = useState(null);
 
-    const { Name, Email, Pass } = userdata;
+
+    const { Name, Email, Pass, } = userdata;
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -41,19 +43,21 @@ const SignUp = () => {
                 });
                 console.log(res)
                 toast.success("Signed Up");
-                const data = collection(database, 'AuthenticatedUsers');
+                // console.log(User.displayName);
                 let date = new Date();
                 let prev = date.getDate();
                 date.setDate(prev);
                 let newDate = date.toJSON().slice(0, 10)
-                addDoc(data, {
+                const DocRef = doc(database, 'ConnectInUsers', User.uid);
+                setDoc(DocRef, {
                     UserName: Name,
                     UserEmail: Email,
                     Date_Joined: newDate,
-                    Image: UserPic,
-                    Heading: ''
+                    UserImage: UserPic,
+                    Heading: userHeading,
+                    College: userCollege
                 }).then(() => {
-                    navigate('/signin');
+                    console.log("Added the Document");
                 }).catch((err) => {
                     console.log(err.message);
                 })
@@ -100,3 +104,27 @@ const SignUp = () => {
 }
 
 export default SignUp
+// const data = collection(database, 'Peoples');
+                // let date = new Date();
+                // let prev = date.getDate();
+                // date.setDate(prev);
+                // let newDate = date.toJSON().slice(0, 10)
+                // addDoc(data, {
+                //     UserName: Name,
+                //     UserEmail: Email,
+                //     Date_Joined: newDate,
+                //     Image: UserPic,
+                //     Id: "",
+                //     Heading: '',
+                //     College: userCollege
+                // }).then((objects) => {
+                //     // const DocRef = doc(database, 'Peoples', objects._key.path.segments[1]);
+                //     // updateDoc(DocRef, {
+                //     //     Id: objects._key.path.segments[1]
+                //     // }).then(() => {console.log("Updated")})
+                //     // setUserId(objects._key.path.segments[1]);
+                //     // props.setCurrentUserId(objects._key.path.segments[1]);
+                //     navigate('/signin');
+                // }).catch((err) => {
+                //     console.log(err.message);
+                // })

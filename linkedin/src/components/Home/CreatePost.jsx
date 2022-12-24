@@ -29,17 +29,22 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const ImageRef = ref(storage, `BlogsImage/${image.name}`);
+    const ImageRef = ref(storage, `ConnectInImage/${image.name}`);
     uploadBytes(ImageRef, image)
       .then(() => {
         getDownloadURL(ImageRef)
           .then((url) => {
-            const data = collection(database, "UsersPost");
+            const data = collection(database, "ConnectInPosts");
+            let date = new Date();
+            let prev = date.getDate();
+            date.setDate(prev);
+            let newDate = date.toJSON().slice(0, 10)
             addDoc(data, {
               Username: userName,
               ImageUrl: url,
               Content: content.Content,
               UserId: userId,
+              Date_posted:newDate
             }).then(() => {
               toast.success("Congratulations, Your blog is Posted");
               navigate("/home");

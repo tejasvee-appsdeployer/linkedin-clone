@@ -1,15 +1,20 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import {getStorage} from "firebase/storage";
+// import 
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCy1ZARGCTM8z1qcMyW4IjImhxqr_Aysrc",
-  authDomain: "linkedin-clone-c472f.firebaseapp.com",
-  projectId: "linkedin-clone-c472f",
-  storageBucket: "linkedin-clone-c472f.appspot.com",
-  messagingSenderId: "443160916387",
-  appId: "1:443160916387:web:18f5d62bfd9fdda2f82a16"
+  apiKey: "AIzaSyA8AwOC9AnVhyHXXQSj21G7Uw5j_2Ck_vA",
+  authDomain: "connectin-18eb8.firebaseapp.com",
+  projectId: "connectin-18eb8",
+  storageBucket: "connectin-18eb8.appspot.com",
+  messagingSenderId: "732818305022",
+  appId: "1:732818305022:web:c790c32d9e491ecb985aaf"
 };
 
 // Initialize Firebase
