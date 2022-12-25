@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { userAuth } from "../../firebase";
+import Modal from "react-bootstrap/Modal";
 
 const NavBar = () => {
 	const [userImage, setUserImage] = useState(null);
@@ -21,6 +22,10 @@ const NavBar = () => {
 			}
 		});
 	});
+
+	const [showEditModal, setShowEditModal] = useState(false);
+	const handleEditModalClose = () => setShowEditModal(false);
+	const handleEditModalOpen = () => setShowEditModal(true);
 	return (
 		<Navbar id="navbar" expand="lg" className="container-fluid" fixed="sticky">
 			<Container
@@ -68,15 +73,9 @@ const NavBar = () => {
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-bolt"></i>Messaging
-						</Nav.Link>
-						<Nav.Link
-							className="mx-2 d-flex flex-column text-center"
-							href="#action1"
-						>
 							<i class="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
-						<Nav.Link className="mx-auto dropdown-center d-flex flex-column text-center">
+						<Nav.Link className="mx-auto me-5 dropdown-center d-flex flex-column text-center dropdown-center">
 							<NavDropdown
 								className="nav-drop-down mx-auto dropdown-center d-flex flex-column text-center"
 								title="Profile"
@@ -90,6 +89,72 @@ const NavBar = () => {
 											className="img-thumbnail profile nav-link"
 										/>
 									</Link>
+								</NavDropdown.Item>
+								<NavDropdown.Item>
+									<Button variant="info" onClick={handleEditModalOpen}>
+										Edit Profile
+									</Button>{" "}
+									<Modal
+										show={showEditModal}
+										onHide={handleEditModalClose}
+										className="text-dark"
+									>
+										<Modal.Header closeButton>
+											<Modal.Title>Edit Profile</Modal.Title>
+										</Modal.Header>
+										<Modal.Body>
+											<Form>
+												<Form.Group controlId="formFile" className="mb-3">
+													<Form.Label>User Profile Image</Form.Label>
+													<Form.Control type="file" />
+												</Form.Group>
+												<Form.Group className="mb-3" controlId="formBasicName">
+													<Form.Label>Name</Form.Label>
+													<Form.Control type="text" placeholder="Enter Name" />
+												</Form.Group>
+												<Form.Group className="mb-3" controlId="formBasicEmail">
+													<Form.Label>Email address</Form.Label>
+													<Form.Control
+														type="email"
+														placeholder="Enter email"
+													/>
+													<Form.Text className="text-muted">
+														We'll never share your email with anyone else.
+													</Form.Text>
+												</Form.Group>
+
+												<Form.Group
+													className="mb-3"
+													controlId="formBasicPassword"
+												>
+													<Form.Label>Password</Form.Label>
+													<Form.Control
+														type="password"
+														placeholder="Password"
+													/>
+													<Form.Text className="text-muted">
+														Strong Passwords include alphanumeric characters and
+														upto 8 characters long.
+													</Form.Text>
+												</Form.Group>
+												<Form.Group
+													className="mb-3"
+													controlId="formBasicCheckbox"
+												></Form.Group>
+											</Form>
+										</Modal.Body>
+										<Modal.Footer>
+											<Button
+												variant="secondary"
+												onClick={handleEditModalClose}
+											>
+												Close
+											</Button>
+											<Button variant="primary" type="submit">
+												Submit
+											</Button>
+										</Modal.Footer>
+									</Modal>
 								</NavDropdown.Item>
 								<NavDropdown.Item>
 									<Button
