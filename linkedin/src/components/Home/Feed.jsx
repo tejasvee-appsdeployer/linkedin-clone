@@ -2,12 +2,10 @@ import React, { useEffect, useState } from "react";
 import { userAuth, database } from "../../firebase";
 import "./Feed.scss";
 import { Container } from "react-bootstrap";
-// import UserImage from "../../Images/User.png";
 import UserImage from "../../Images/profile.jpg";
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
 
 const Feed = (props) => {
-  console.log(props.value);
   const [userName, setUserName] = useState("");
   const [userImage, setUserImage] = useState(UserImage);
   const [userId, setUserId] = useState(null);
@@ -28,20 +26,20 @@ const Feed = (props) => {
 
   const [allPosts, setAllPosts] = useState([]);
   const data = collection(database, "ConnectInPosts");
-  getDocs(data).then((snapshot) => {
-    let res = [];
-    snapshot.docs.forEach((item) => {
-      if(props.value !== ""){
-        if(props.value === item.data().Username){
+    getDocs(data).then((snapshot) => {
+      let res = [];
+      snapshot.docs.forEach((item) => {
+        if(props.value !== ""){
+          if(props.value === item.data().Username){
+            res.push({ ...item.data(), id: item.id });
+          }
+        }
+        else{
           res.push({ ...item.data(), id: item.id });
         }
-      }
-      else{
-        res.push({ ...item.data(), id: item.id });
-      }
+      });
+      setAllPosts(res);
     });
-    setAllPosts(res);
-  });
 
   return (
     <>
