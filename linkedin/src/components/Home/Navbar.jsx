@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import UserImage from "../../Images/User.png";
 import { userAuth, database, storage } from "../../firebase";
 import { signOut } from "@firebase/auth";
-import { doc, updateDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import {
 	Button,
 	Container,
@@ -42,33 +40,6 @@ const NavBar = () => {
 		});
 	}, []);
 
-	const [showEditModal, setShowEditModal] = useState(false);
-	const handleEditModalClose = () => setShowEditModal(false);
-	const handleEditModalOpen = () => setShowEditModal(true);
-	const handleFormSubmit = (e) => {
-		e.preventDefault();
-		const ImageRef = ref(storage, `ConnectInImage/${userImage.name}`);
-		uploadBytes(ImageRef, userImage).then(() => {
-			getDownloadURL(ImageRef).then((url) => {
-				const DocRef = doc(database, "ConnectInUsers", userId);
-				let date = new Date();
-				let prev = date.getDate();
-				date.setDate(prev);
-				let newDate = date.toJSON().slice(0, 10);
-				updateDoc(DocRef, {
-					UserName: UserName1,
-					UserEmail: UserEmail1,
-					UserImage: url,
-					Date_Joined: newDate,
-					Heading: Heading1,
-					College: College1,
-				}).then(() => {
-					toast.success("Updated the profile");
-					navigate("/home");
-				});
-			});
-		});
-	};
 	return (
 		<Navbar id="navbar" expand="lg" className="container-fluid" fixed="sticky">
 			<Container
