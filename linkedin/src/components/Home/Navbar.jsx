@@ -118,7 +118,7 @@ const NavBar = () => {
 						>
 							<i className="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
-						<Nav.Link className="mx-auto me-5 dropdown-center d-flex flex-column text-center dropdown-center">
+						{/* <Nav.Link className="mx-auto me-5 dropdown-center d-flex flex-column text-center dropdown-center">
 							<NavDropdown
 								className="nav-drop-down mx-auto dropdown-center d-flex flex-column text-center"
 								title="Profile"
@@ -258,7 +258,7 @@ const NavBar = () => {
 									</Button>{" "}
 								</NavDropdown.Item>
 							</NavDropdown>
-						</Nav.Link>
+						</Nav.Link> */}
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
