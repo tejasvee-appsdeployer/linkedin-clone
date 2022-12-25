@@ -31,7 +31,7 @@ const CreatePost = () => {
 				setUserName("");
 			}
 		});
-	}, []);
+	}, [userId]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -93,6 +93,7 @@ const CreatePost = () => {
 							onChange={(e) =>
 								setContent((prev) => ({ ...prev, Content: e.target.value }))
 							}
+							required
 						></textarea>
 						<label htmlFor="file-upload" className="btn btn-secondary">
 							Upload
@@ -101,6 +102,7 @@ const CreatePost = () => {
 								name="file"
 								id="file-upload"
 								onChange={(e) => setImage(e.target.files[0])}
+								required
 							/>
 						</label>
 						<button

@@ -46,7 +46,7 @@ const NavBar = () => {
 				fluid
 				className="navbar-wrap d-flex justify-content-around ms-4"
 			>
-				<Navbar.Brand href="/home" className="navbar-brand">
+				<Navbar.Brand href="/" className="navbar-brand">
 					ConnectIn
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbarScroll" />
