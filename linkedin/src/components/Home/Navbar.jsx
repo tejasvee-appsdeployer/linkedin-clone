@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import UserImage from "../../Images/User.png";
-import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
+import {
+	Button,
+	Container,
+	Form,
+	Nav,
+	Navbar,
+	NavDropdown,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import { userAuth } from "../../firebase";
@@ -15,7 +22,7 @@ const NavBar = () => {
 		});
 	});
 	return (
-		<Navbar id="navbar" expand="lg" className="container-fluid">
+		<Navbar id="navbar" expand="lg" className="container-fluid" fixed="sticky">
 			<Container
 				fluid
 				className="navbar-wrap d-flex justify-content-around ms-4"
@@ -69,10 +76,33 @@ const NavBar = () => {
 						>
 							<i class="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
-						<Nav><Link className="mx-2" to="/profile">
-							<img src={userImage} alt="" className="img-thumbnail profile nav-link" />
-							 </Link>
-						</Nav>
+						<Nav.Link className="mx-auto dropdown-center d-flex flex-column text-center">
+							<NavDropdown
+								className="nav-drop-down"
+								title="Profile"
+								id="basic-nav-dropdown"
+							>
+								<NavDropdown.Item>
+									<Link to="/profile">
+										<img
+											src={userImage}
+											alt="user"
+											className="img-thumbnail profile nav-link"
+										/>
+									</Link>
+								</NavDropdown.Item>
+								<NavDropdown.Item>
+									<Button
+										variant="danger"
+										onClick={() => {
+											alert("logout");
+										}}
+									>
+										Logout
+									</Button>{" "}
+								</NavDropdown.Item>
+							</NavDropdown>
+						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
