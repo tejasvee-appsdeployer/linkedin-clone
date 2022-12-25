@@ -16,7 +16,6 @@ const CreatePost = () => {
 	const [content, setContent] = useState("");
 	const [image, setImage] = useState(null);
 	useEffect(() => {
-		console.log(4);
 		userAuth.onAuthStateChanged((user) => {
 			if (user) {
 				setUserId(user.uid);
