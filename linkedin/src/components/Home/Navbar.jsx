@@ -78,15 +78,6 @@ const NavBar = () => {
 				<Navbar.Brand href="/home" className="navbar-brand">
 					ConnectIn
 				</Navbar.Brand>
-				{/* <Form className="d-flex search-wrap">
-          <Form.Control
-            type="search"
-            placeholder="Search"
-            className="me-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-light">Search</Button>
-        </Form> */}
 				<Navbar.Toggle aria-controls="navbarScroll" />
 				<Navbar.Collapse id="navbarScroll">
 					<Nav
@@ -94,10 +85,7 @@ const NavBar = () => {
 						style={{ maxHeight: "100px" }}
 						navbarScroll
 					>
-						<Nav.Link
-							className="mx-2 d-flex flex-column text-center"
-							href="/"
-						>
+						<Nav.Link className="mx-2 d-flex flex-column text-center" href="/">
 							<i className="fa-solid fa-house"></i>Home
 						</Nav.Link>
 						<Nav.Link
@@ -118,147 +106,19 @@ const NavBar = () => {
 						>
 							<i className="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
-						{/* <Nav.Link className="mx-auto me-5 dropdown-center d-flex flex-column text-center dropdown-center">
-							<NavDropdown
-								className="nav-drop-down mx-auto dropdown-center d-flex flex-column text-center"
-								title="Profile"
-								id="basic-nav-dropdown"
+						<Nav.Link className="mx-2 text-center">
+							<Button
+								variant="danger"
+								onClick={() => {
+									signOut(userAuth).then(() => {
+										navigate("/signin");
+									});
+								}}
 							>
-								<NavDropdown.Item>
-									<Link to="/profile">
-										<img
-											src={userImage}
-											alt="user"
-											className="img-thumbnail profile nav-link"
-										/>
-									</Link>
-								</NavDropdown.Item>
-								<NavDropdown.Item>
-									<Button variant="info" onClick={handleEditModalOpen}>
-										Edit Profile
-									</Button>{" "}
-									<Modal
-										show={showEditModal}
-										onHide={handleEditModalClose}
-										className="text-dark"
-									>
-										<Modal.Header closeButton>
-											<Modal.Title>Edit Profile</Modal.Title>
-										</Modal.Header>
-										<Modal.Body>
-											<Form>
-												<Form.Group controlId="formFile" className="mb-3">
-													<Form.Label>User Profile Image</Form.Label>
-													<Form.Control
-														type="file"
-														onChange={(e) => setUserImage(e.target.files[0])}
-													/>
-												</Form.Group>
-												<Form.Group className="mb-3" controlId="formBasicName">
-													<Form.Label>Name</Form.Label>
-													<Form.Control
-														type="text"
-														placeholder="Enter Name"
-														onChange={(e) =>
-															setUpdatedUser((prev) => ({
-																...prev,
-																UserName1: e.target.value,
-															}))
-														}
-													/>
-												</Form.Group>
-												<Form.Group className="mb-3" controlId="formBasicEmail">
-													<Form.Label>Email address</Form.Label>
-													<Form.Control
-														type="email"
-														placeholder="Enter email"
-														onChange={(e) =>
-															setUpdatedUser((prev) => ({
-																...prev,
-																UserEmail1: e.target.value,
-															}))
-														}
-													/>
-													<Form.Text className="text-muted">
-														We'll never share your email with anyone else.
-													</Form.Text>
-												</Form.Group>
-
-												<Form.Group
-													className="mb-3"
-													controlId="formBasicCollege"
-												>
-													<Form.Label>College</Form.Label>
-													<Form.Control
-														type="text"
-														placeholder="College/Institution Name"
-														onChange={(e) =>
-															setUpdatedUser((prev) => ({
-																...prev,
-																College1: e.target.value,
-															}))
-														}
-													/>
-												</Form.Group>
-												<Form.Group
-													className="mb-3"
-													controlId="formBasicHeading"
-												>
-													<Form.Label>Heading</Form.Label>
-													<Form.Control
-														type="text"
-														placeholder="Heading"
-														onChange={(e) =>
-															setUpdatedUser((prev) => ({
-																...prev,
-																Heading1: e.target.value,
-															}))
-														}
-													/>
-													<Form.Text className="text-muted">
-														{" "}
-														Current Occupation.{" "}
-													</Form.Text>
-												</Form.Group>
-												<Form.Group
-													className="mb-3"
-													controlId="formBasicCheckbox"
-												></Form.Group>
-											</Form>
-										</Modal.Body>
-										<Modal.Footer>
-											<Button
-												variant="secondary"
-												onClick={handleEditModalClose}
-											>
-												{" "}
-												Close{" "}
-											</Button>
-											<Button
-												variant="primary"
-												type="submit"
-												onClick={handleFormSubmit}
-											>
-												Submit
-											</Button>
-										</Modal.Footer>
-									</Modal>
-								</NavDropdown.Item>
-								<NavDropdown.Item>
-									<Button
-										variant="danger"
-										onClick={() => {
-											signOut(userAuth).then(() => {
-												navigate("/signin");
-											});
-										}}
-									>
-										{" "}
-										Logout{" "}
-									</Button>{" "}
-								</NavDropdown.Item>
-							</NavDropdown>
-						</Nav.Link> */}
+								{" "}
+								Logout{" "}
+							</Button>
+						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
