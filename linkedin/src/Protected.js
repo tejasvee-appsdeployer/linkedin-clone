@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { userAuth } from './firebase';
-import './Protected.css'
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { userAuth } from "./firebase";
+import "./Protected.css";
 
 const Protected = (props) => {
     const navigate = useNavigate();
@@ -23,4 +23,4 @@ const Protected = (props) => {
     )
 }
 
-export default Protected
+export default Protected;

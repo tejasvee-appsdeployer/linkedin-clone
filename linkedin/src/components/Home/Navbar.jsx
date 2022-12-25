@@ -96,7 +96,7 @@ const NavBar = () => {
 					>
 						<Nav.Link
 							className="mx-2 d-flex flex-column text-center"
-							href="#action1"
+							href="/"
 						>
 							<i className="fa-solid fa-house"></i>Home
 						</Nav.Link>
