@@ -64,11 +64,11 @@ const UserProfile = () => {
 					<div className="card-body text-dark row">
 						<div className="col col-10 left">
 							<h5 className="card-title">{userName}</h5>
-							<p className="card-text">
+							<span className="card-text">
 								<p className="description">{userContent}</p>
 								<i class="fa-solid fa-house-laptop"></i>
 								{userCollege}f
-							</p>
+							</span>
 							<div className="btn btn-primary">
 								<i class="fa-solid fa-bolt"></i> Message
 							</div>

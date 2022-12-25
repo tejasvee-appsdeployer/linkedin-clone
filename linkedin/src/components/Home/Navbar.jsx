@@ -50,33 +50,33 @@ const NavBar = () => {
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-house"></i>Home
+							<i className="fa-solid fa-house"></i>Home
 						</Nav.Link>
 						<Nav.Link
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-globe"></i>My Network
+							<i className="fa-solid fa-globe"></i>My Network
 						</Nav.Link>
 						<Nav.Link
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-briefcase"></i>Jobs
+							<i className="fa-solid fa-briefcase"></i>Jobs
 						</Nav.Link>
 						<Nav.Link
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-bolt"></i>Messaging
+							<i className="fa-solid fa-bolt"></i>Messaging
 						</Nav.Link>
 						<Nav.Link
 							className="mx-2 d-flex flex-column text-center"
 							href="#action1"
 						>
-							<i class="fa-solid fa-bell"></i>Notifications
+							<i className="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
-						<Nav.Link className="mx-auto dropdown-center d-flex flex-column text-center">
+						<Nav.Item className="mx-auto dropdown-center d-flex flex-column text-center">
 							<NavDropdown
 								className="nav-drop-down"
 								title="Profile"
@@ -102,7 +102,7 @@ const NavBar = () => {
 									</Button>{" "}
 								</NavDropdown.Item>
 							</NavDropdown>
-						</Nav.Link>
+						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>
