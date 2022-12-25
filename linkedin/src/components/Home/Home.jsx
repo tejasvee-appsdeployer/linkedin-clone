@@ -141,7 +141,6 @@ const Home = () => {
 						<Modal.Body>
 							<div className="createpost-modal" style={{ width: "100%" }}>
 								<div className="card">
-									<div className="card-header">Create a Post</div>
 									<div className="card-body">
 										<div className="card-user-info">
 											<div className="user-img-wrap">
