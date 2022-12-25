@@ -1,131 +1,123 @@
-@import './Common.scss' ;
+@import "./Common.scss";
 
-.card-wrap{
-    background-color: $dark;
-    width: 25%;
-    height: fit-content;
-    padding: 2rem;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .img-wrap{
-        // border: 0.2px solid black;
-        border-radius: 100px;
-        margin: 0.5rem 0rem;
-        display: flex;
-        justify-content: center;
+.card-wrap {
+	background-color: $dark;
+	width: 25%;
+	height: fit-content;
+	padding: 2rem;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.img-wrap {
+		// border: 0.2px solid black;
+		border-radius: 100px;
+		margin: 0.5rem 0rem;
+		display: flex;
+		justify-content: center;
 
-        img{
-            width: 150px;
-            height: 150px;
-            object-fit:cover;
-            border: none;
-            border-radius: 100px; 
-        }
-    }
+		img {
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			border: none;
+			border-radius: 100px;
+		}
+	}
 
-    .card-body{
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: fit-content;
-        h5{
-            width: 100%;
-            height: auto;
-            font-weight: 200;
-        }
+	.card-body {
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: fit-content;
+		h5 {
+			width: 100%;
+			height: auto;
+			font-weight: 200;
+		}
 
-        .social{
-            margin: 1rem 0rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;        
+		.social {
+			margin: 1rem 0rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
-            & > .social-icon{
-                margin: 3px;
-            
-                
-            }
-        }
-        #viewprofile-btn{
-            width: 100%;
-            border-radius: 25px;
-            background-color: $lighter;
-            border-color: $lighter;
-        }
-    }
-   
+			& > .social-icon {
+				margin: 3px;
+			}
+		}
+		#viewprofile-btn {
+			width: 100%;
+			border-radius: 25px;
+			background-color: $lighter;
+			border-color: $lighter;
+		}
+	}
 }
 // Mobile view
-@media (min-width: 0px) and (max-width:$mobile) {
-    .card-wrap{
-        display: none;
-    }
+@media (min-width: 0px) and (max-width: $mobile) {
+	.card-wrap {
+		display: none;
+	}
 }
 
 // tablet view
 @media (min-width: $mobile) and (max-width: $tablet) {
-    
-    .card-wrap{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border-radius: 25px;
-        width: auto;
-        .card-body{
-            h4{
-                font-size: medium;
-            }
-            h5{
-                font-size: x-small;
-            }
-        }
-        
-        .img-wrap{
+	.card-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 25px;
+		width: auto;
+		.card-body {
+			h4 {
+				font-size: medium;
+			}
+			h5 {
+				font-size: x-small;
+			}
+		}
 
-    
-            img{
-                width: 100px;
-                height: 100px;
-                object-fit:cover;
-                border: none;
-                border-radius: 100px; 
-            }
-        }
-    
-        .card-body{
-            width: fit-content;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin:auto;
-    
-            .social{
-                margin: 1rem 0rem;
-    
-                & > .social-icon{
-                    margin: 3px;
-                    
-                }
-            }
-            #viewprofile-btn{
-                width: 100%;
-                border-radius: 25px;
-            }
-        }
-       
-    }
+		.img-wrap {
+			img {
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+				border: none;
+				border-radius: 100px;
+			}
+		}
+
+		.card-body {
+			width: fit-content;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin: auto;
+
+			.social {
+				margin: 1rem 0rem;
+
+				& > .social-icon {
+					margin: 3px;
+				}
+			}
+			#viewprofile-btn {
+				width: 100%;
+				border-radius: 25px;
+			}
+		}
+	}
 }
 // desktop view
-@media (min-width: $tablet) and (max-width:$desktop) {
-    .card-wrap{
-        display: block;
-    }
+@media (min-width: $tablet) and (max-width: $desktop) {
+	.card-wrap {
+		display: block;
+	}
 }

@@ -17,6 +17,7 @@ const UserProfile = () => {
 	const [allPosts, setAllPosts] = useState([]);
 
 	useEffect(() => {
+		console.log(1);
 		userAuth.onAuthStateChanged((user) => {
 			if (user) {
 				setUserId(user.uid);
@@ -44,7 +45,7 @@ const UserProfile = () => {
 				setUserName("");
 			}
 		});
-	},[]);
+	}, [userId]);
 
 	return (
 		<>
