@@ -1,0 +1,20 @@
+@import "./Common.scss";
+
+#navbar {
+	background-color: $dark;
+	color: aliceblue;
+	.navbar-wrap {
+		.navbar-brand {
+			color: aliceblue;
+		}
+		.nav-link-wrap > * {
+			color: aliceblue;
+		}
+	}
+}
+.profile {
+	border-radius: 100px;
+	width: 40px;
+	height: 40px;
+	object-fit: cover;
+}

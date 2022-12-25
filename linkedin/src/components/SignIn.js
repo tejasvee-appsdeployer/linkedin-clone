@@ -28,7 +28,7 @@ const SignIn = () => {
     }
     signInWithEmailAndPassword(userAuth, Email, Pass).then((res) => {
       toast.success("Logged In Successfully");
-      navigate('/');
+      navigate('/home');
     }).catch((err) => {
       console.log(err.message);
     })
@@ -38,7 +38,8 @@ const SignIn = () => {
     <div>
       <div className="SignInContainer">
         <div className="SignInNav">
-          <img src={Logo} className='Auth' alt="" />
+          {/* <img src={Logo} className='Auth' alt="" /> */}
+          ConnectIn
         </div>
         <h1 className="SignInHeading">
           Welcome to your professional community

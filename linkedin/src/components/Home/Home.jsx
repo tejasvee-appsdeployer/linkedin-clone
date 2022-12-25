@@ -3,11 +3,13 @@ import CreatePost from './CreatePost'
 import Feed from './Feed'
 import ProfileCard from './ProfileCard'
 import './Home.scss'
+import NavBar from './Navbar'
 
-const Home = () => {
+const Home = (props) => {
   return (
     <>
-    <div className="home-wrapper">
+    <NavBar/>
+    <div className="home-wrapper" style={{width:'85%'}}>
         <ProfileCard/>
         <Feed/>
         <CreatePost/>

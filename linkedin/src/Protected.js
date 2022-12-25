@@ -9,7 +9,7 @@ const Protected = (props) => {
     useEffect(() => {
         userAuth.onAuthStateChanged((user) => {
           if(user){
-            navigate('/');
+            navigate('/home');
           }
           else{
             navigate('/signin');
