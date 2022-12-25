@@ -20,8 +20,8 @@ function App() {
         <ToastContainer position='top-center' />
         <Routes>
           {/* <Route path='/' element={<Protected Component={Feed} />} /> */}
-          <Route path='/home' element={<Home/>} />
-          {/* <Route path='/home' element={<Protected Component={Home} />} /> */}
+          {/* <Route path='/home' element={<Home/>} /> */}
+          <Route path='/' element={<Protected Component={Home} />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path="/profile/:id" element={<UserProfile />} />

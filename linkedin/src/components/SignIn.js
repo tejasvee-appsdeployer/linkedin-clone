@@ -28,7 +28,7 @@ const SignIn = () => {
     }
     signInWithEmailAndPassword(userAuth, Email, Pass).then((res) => {
       toast.success("Logged In Successfully");
-      navigate('/home');
+      navigate('/');
     }).catch((err) => {
       console.log(err.message);
     })
