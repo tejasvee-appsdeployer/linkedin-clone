@@ -53,11 +53,7 @@ const UserProfile = () => {
 			<Container className="parent-card d-flex flex-column justify-content-center align-items-center">
 				<div className="card mb-3 profile-card-wrapper">
 					<div className="background-img-wrap">
-						<img
-							src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg"
-							className="card-img-top background-img"
-							alt="..."
-						/>
+						<img src="https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg"className="card-img-top background-img"alt="..."/>
 					</div>
 					<div className="profile-img-wrap">
 						<img src={userImage} className="profile-img" alt="profile" />
@@ -67,11 +63,11 @@ const UserProfile = () => {
 							<h5 className="card-title">{userName}</h5>
 							<span className="card-text">
 								<p className="description">{userContent}</p>
-								<i class="fa-solid fa-house-laptop"></i>
-								{userCollege}f
+								<i className="fa-solid fa-house-laptop"></i>{userCollege}
 							</span>
+							<br/>
 							<div className="btn btn-primary">
-								<i class="fa-solid fa-bolt"></i> Message
+								<i className="fa-solid fa-edit"></i> Edit Profile
 							</div>
 						</div>
 						<div className="col d-grid gap-2">
@@ -117,8 +113,8 @@ const UserProfile = () => {
 												{objects.Content}
 											</p>
 										</div>
-										<span class="badge bg-primary rounded-pill">
-											14 <i class="fa-solid fa-thumbs-up"></i>
+										<span className="badge bg-primary rounded-pill">
+											14 <i className="fa-solid fa-thumbs-up"></i>
 										</span>
 									</li>
 								) : (
