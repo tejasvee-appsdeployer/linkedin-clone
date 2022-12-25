@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import UserImage from "../../Images/User.png";
+import { userAuth } from "../../firebase";
+import { signOut } from "@firebase/auth";
 import {
 	Button,
 	Container,
@@ -8,13 +10,13 @@ import {
 	Navbar,
 	NavDropdown,
 } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.scss";
-import { userAuth } from "../../firebase";
 import Modal from "react-bootstrap/Modal";
 
 const NavBar = () => {
 	const [userImage, setUserImage] = useState(null);
+	const navigate = useNavigate();
 	useEffect(() => {
 		userAuth.onAuthStateChanged((user) => {
 			if (user) {
@@ -170,14 +172,7 @@ const NavBar = () => {
 									</Modal>
 								</NavDropdown.Item>
 								<NavDropdown.Item>
-									<Button
-										variant="danger"
-										onClick={() => {
-											alert("logout");
-										}}
-									>
-										Logout
-									</Button>{" "}
+									<Button variant="danger" onClick={() => {signOut(userAuth).then(() => {navigate('/signin')})}} > Logout </Button>{" "}
 								</NavDropdown.Item>
 							</NavDropdown>
 						</Nav.Link>
