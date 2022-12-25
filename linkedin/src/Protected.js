@@ -15,7 +15,7 @@ const Protected = (props) => {
             navigate('/signin');
           }
         })
-      })
+      }, [])
     return (
         <div className='container-fluid' >
             <Component />
