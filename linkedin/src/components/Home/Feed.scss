@@ -2,11 +2,12 @@
 
 .feed-wrap {
 
-    width: 45%;
+    width: 100%;
 	background-color:$dark;
 	// border: 0.5px solid black;
 	border-radius: 25px;
 	padding: 0.5rem;
+	margin-bottom:1rem;
 	.profile-wrap {
 		display: flex;
 		margin-top: 20px;

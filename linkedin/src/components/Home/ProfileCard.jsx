@@ -37,14 +37,14 @@ const ProfileCard = () => {
         </div>
         <div className="card-body">
             <h4>{userName}</h4>
-            <h5 style={{fontWeight:'200'}}>{userContent}</h5>
+            <h5>{userContent} </h5>
             <div className="social">
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="dribbble"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="instagram"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="facebook"/>
                 <SocialIcon style={{height:'35px',width:'35px'}}  className="social-icon" network="google"/>
             </div>
-            <Link to='/profile/:`${userId}`'>View Profile</Link>
+            <Link to='/profile/:`${userId}`' class="btn btn-primary" id="viewprofile-btn">View Profile</Link>
         </div>
       </div>
     </>

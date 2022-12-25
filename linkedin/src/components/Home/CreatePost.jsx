@@ -31,7 +31,7 @@ const CreatePost = () => {
         setUserName("");
       }
     });
-  });
+  },[]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

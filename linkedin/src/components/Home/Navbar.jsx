@@ -80,7 +80,7 @@ const NavBar = () => {
         <Navbar.Brand href="/home" className="navbar-brand">
           ConnectIn
         </Navbar.Brand>
-        <Form className="d-flex search-wrap">
+        {/* <Form className="d-flex search-wrap">
           <Form.Control
             type="search"
             placeholder="Search"
@@ -88,7 +88,7 @@ const NavBar = () => {
             aria-label="Search"
           />
           <Button variant="outline-light">Search</Button>
-        </Form>
+        </Form> */}
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav

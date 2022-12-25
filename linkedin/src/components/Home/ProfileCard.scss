@@ -27,14 +27,16 @@
     }
 
     .card-body{
-        width: fit-content;
+        width: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: fit-content;
         h5{
-            width: max-content;
+            width: 100%;
+            height: auto;
+            font-weight: 200;
         }
 
         .social{

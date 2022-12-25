@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { userAuth } from './firebase';
-
+import './Protected.css'
 
 const Protected = (props) => {
     const navigate = useNavigate();
@@ -17,8 +17,8 @@ const Protected = (props) => {
         })
       })
     return (
-        <div>
-            <Component/>
+        <div className='container-fluid' >
+            <Component />
         </div>
     )
 }

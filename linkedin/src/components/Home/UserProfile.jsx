@@ -44,7 +44,7 @@ const UserProfile = () => {
 				setUserName("");
 			}
 		});
-	});
+	},[]);
 
 	return (
 		<>
