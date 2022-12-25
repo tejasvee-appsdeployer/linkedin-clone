@@ -139,7 +139,7 @@ const Home = () => {
 							<Modal.Title>Create Post</Modal.Title>
 						</Modal.Header>
 						<Modal.Body>
-							<div className="createpost-modal">
+							<div className="createpost-modal" style={{ width: "100%" }}>
 								<div className="card">
 									<div className="card-header">Create a Post</div>
 									<div className="card-body">
