@@ -26,6 +26,9 @@ const NavBar = () => {
 	const [showEditModal, setShowEditModal] = useState(false);
 	const handleEditModalClose = () => setShowEditModal(false);
 	const handleEditModalOpen = () => setShowEditModal(true);
+	const handleFormSubmit = () => {
+		alert("Form submitted");
+	};
 	return (
 		<Navbar id="navbar" expand="lg" className="container-fluid" fixed="sticky">
 			<Container
@@ -125,16 +128,22 @@ const NavBar = () => {
 
 												<Form.Group
 													className="mb-3"
-													controlId="formBasicPassword"
+													controlId="formBasicCollege"
 												>
-													<Form.Label>Password</Form.Label>
+													<Form.Label>College</Form.Label>
 													<Form.Control
-														type="password"
-														placeholder="Password"
+														type="text"
+														placeholder="College/Institution Name"
 													/>
+												</Form.Group>
+												<Form.Group
+													className="mb-3"
+													controlId="formBasicHeading"
+												>
+													<Form.Label>Heading</Form.Label>
+													<Form.Control type="text" placeholder="Heading" />
 													<Form.Text className="text-muted">
-														Strong Passwords include alphanumeric characters and
-														upto 8 characters long.
+														Current Occupation.
 													</Form.Text>
 												</Form.Group>
 												<Form.Group
@@ -150,7 +159,11 @@ const NavBar = () => {
 											>
 												Close
 											</Button>
-											<Button variant="primary" type="submit">
+											<Button
+												variant="primary"
+												type="submit"
+												onClick={handleFormSubmit}
+											>
 												Submit
 											</Button>
 										</Modal.Footer>
