@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
 import UserImage from "../../Images/User.png";
-import { userAuth, database, storage } from "../../firebase";
+import { userAuth } from "../../firebase";
 import { signOut } from "@firebase/auth";
 import {
 	Button,
 	Container,
-	Form,
 	Nav,
 	Navbar,
-	NavDropdown,
 } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.scss";
-import Modal from "react-bootstrap/Modal";
-import { toast } from "react-toastify";
 
 const initialState = {
 	UserName1: "",

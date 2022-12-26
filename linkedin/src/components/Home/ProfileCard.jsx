@@ -11,6 +11,7 @@ const ProfileCard = () => {
 	const [userImage, setUserImage] = useState(UserImage);
 	const [userId, setUserId] = useState(null);
 	const [userContent, setUserContent] = useState(null);
+	const [userCollege, setUserCollege] = useState("");
 
 	useEffect(() => {
 		userAuth.onAuthStateChanged((user) => {
@@ -19,9 +20,10 @@ const ProfileCard = () => {
 				const DocRef = doc(database, "ConnectInUsers", userId);
 				getDoc(DocRef)
 					.then((object) => {
-						setUserName(object.data().UserName);
+						setUserName(object.data().Username);
 						setUserImage(object.data().UserImage);
 						setUserContent(object.data().Heading);
+						setUserCollege(object.data().College);
 					})
 					.catch((err) => {
 						console.log(err.message);
@@ -60,13 +62,7 @@ const ProfileCard = () => {
 							network="google"
 						/>
 					</div>
-					<Link
-						to={`/profile/:${userId}`}
-						class="btn btn-primary"
-						id="viewprofile-btn"
-					>
-						View Profile
-					</Link>
+					<Link to={`/profile/:${userId}`} state={{UserName: userName, UserImage:userImage, Heading: userContent, College: userCollege}} class="btn btn-primary" id="viewprofile-btn" > View Profile </Link>
 				</div>
 			</div>
 		</>

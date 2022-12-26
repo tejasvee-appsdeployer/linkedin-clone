@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import CreatePost from "./CreatePost";
 import Feed from "./Feed";
 import ProfileCard from "./ProfileCard";
@@ -12,10 +12,12 @@ import { Modal } from "react-bootstrap";
 import UserImage from "../../Images/User.png";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase";
+import SearchContext from "../../context/SearchContext";
 
 const Home = () => {
 	const [search, setSearch] = useState("");
-	const [newSearch, setNewSearch] = useState("");
+
+	const {setSearches} = useContext(SearchContext);
 	const handleSearch = (e) => {
 		e.preventDefault();
 		var Count = 0;
@@ -29,9 +31,9 @@ const Home = () => {
 				});
 				if (Count === 0) {
 					toast.error("User Not Found/User has not posted any Post");
-					setNewSearch("");
+					setSearches("");
 				} else {
-					setNewSearch(search);
+					setSearches(search);
 				}
 			})
 			.catch((err) => {
@@ -66,7 +68,7 @@ const Home = () => {
 				setUserName("");
 			}
 		});
-	}, []);
+	}, [userId]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -191,7 +193,7 @@ const Home = () => {
 				</div>
 				<div className="home-wrapper">
 					<ProfileCard />
-					<Feed value={newSearch} />
+					<Feed/>
 					<CreatePost />
 				</div>
 			</div>

@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { Button, Container, Form, Modal } from "react-bootstrap";
 import UserImage from "../../Images/User.png";
 import "./UserProfile.scss";
+import { useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 import NavBar from "./Navbar";
 import { userAuth, database, storage } from "../../firebase";
@@ -31,38 +32,40 @@ const UserProfile = () => {
 	const [userId, setUserId] = useState(null);
 	const [userContent, setUserContent] = useState(null);
 	const [userCollege, setUserCollege] = useState("");
-
+	const location = useLocation();
 	const [allPosts, setAllPosts] = useState([]);
 
 	useEffect(() => {
-		userAuth.onAuthStateChanged((user) => {
-			if (user) {
-				setUserId(user.uid);
-				const DocRef = doc(database, "ConnectInUsers", userId);
-				getDoc(DocRef)
-					.then((object) => {
-						setUserName(object.data().UserName);
-						setUserImage(object.data().UserImage);
-						setUserContent(object.data().Heading);
-						setUserCollege(object.data().College);
-					})
-					.catch((err) => {
-						console.log(err.message);
-					});
+		// userAuth.onAuthStateChanged((user) => {
+		// 	if (user) {
+		// 		setUserId(user.uid);
+		// 		const DocRef = doc(database, "ConnectInUsers", userId);
+		// 		getDoc(DocRef)
+		// 			.then((object) => {
+		// 				setUserName(object.data().UserName);
+		// 				setUserImage(object.data().UserImage);
+		// 				setUserContent(object.data().Heading);
+		// 				setUserCollege(object.data().College);
+		// 			})
+		// 			.catch((err) => {
+		// 				console.log(err.message);
+		// 			});
 
-				const data = collection(database, "ConnectInPosts");
-				getDocs(data).then((snapshot) => {
-					let res = [];
-					snapshot.docs.forEach((item) => {
-						res.push({ ...item.data(), id: item.id });
-					});
-					setAllPosts(res);
-				});
-			} else {
-				setUserName("");
-			}
-		});
-	}, [userId]);
+				
+		// 	} else {
+		// 		setUserName("");
+		// 	}
+		// });
+
+		const Object = location.state;
+		setUserName(Object.Username);
+		setUserImage(Object.UserImage);
+		setUserContent(Object.Heading);
+		setUserCollege(Object.College);
+
+		console.log(Object)
+	}, []);
+
 
 	const navigate = useNavigate();
 	const [updatedUser, setUpdatedUser] = useState(initialState);

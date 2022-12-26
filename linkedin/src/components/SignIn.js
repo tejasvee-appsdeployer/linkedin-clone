@@ -1,5 +1,5 @@
 import './SignIn.css';
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Logo from '../Images/LinkedLogo.jpg';
 import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -13,7 +13,6 @@ const initialState = {
 }
 
 const SignIn = () => {
-
   const navigate = useNavigate();
 
   const [userdata, setUserData] = useState(initialState);

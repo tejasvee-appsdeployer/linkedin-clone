@@ -58,6 +58,13 @@
 		}
 	}
 }
+.Link{
+	text-decoration: none;
+	color: white;
+}
+.Link:hover{
+	color: rgb(210, 205, 205);
+}
 @media (min-width: 0px) and (max-width: $mobile) {
 	.feed-container {
 		// display: none;
