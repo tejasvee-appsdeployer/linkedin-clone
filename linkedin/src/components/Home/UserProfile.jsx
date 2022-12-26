@@ -110,7 +110,7 @@ const UserProfile = () => {
 					<div className="profile-img-wrap">
 						<img src={userImage} className="profile-img" alt="profile" />
 					</div>
-					<div className="card-body text-dark row">
+					<div className="card-body row">
 						<div className="col col-10 left">
 							<h5 className="card-title">{userName}</h5>
 							<span className="card-text">
@@ -222,7 +222,7 @@ const UserProfile = () => {
 								</Modal>
 							</div>
 						</div>
-						<div className="col d-grid gap-2">
+						<div className="col d-lg-grid d-md-grid gap-2 d-sm-none">
 							<SocialIcon
 								style={{ height: "35px", width: "35px" }}
 								className="social-icon "
@@ -246,17 +246,17 @@ const UserProfile = () => {
 						</div>
 					</div>
 				</div>
-				<Container className="activity-card card text-dark">
+				<Container className="activity-card card ">
 					<h4 className="card-title mt-3">Your Posts</h4>
 					<div className="card-body">
 						<ul className="list-group">
 							{allPosts.map((objects) =>
 								objects.UserId === userId ? (
-									<li className="list-group-item d-flex justify-content-between align-items-start">
+									<li className="list-group-item d-flex justify-content-between align-items-start mt-3">
 										<div className="post-img-desc-wrap d-flex ">
 											<img
 												src={objects.ImageUrl}
-												className=" activity-post-thumbnail mr-2"
+												className=" activity-post-thumbnail mr-2 "
 												alt="post-img"
 											/>
 											<p>
@@ -265,7 +265,7 @@ const UserProfile = () => {
 												{objects.Content}
 											</p>
 										</div>
-										<span className="badge bg-primary rounded-pill">
+										<span className="badge bg-primary rounded-pill d-sm-none d-md-block">
 											14 <i className="fa-solid fa-thumbs-up"></i>
 										</span>
 									</li>
