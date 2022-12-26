@@ -50,7 +50,7 @@ const SignUp = (props) => {
                 let newDate = date.toJSON().slice(0, 10)
                 const DocRef = doc(database, 'ConnectInUsers', User.uid);
                 setDoc(DocRef, {
-                    UserName: Name,
+                    Username: Name,
                     UserEmail: Email,
                     Date_Joined: newDate,
                     UserImage: UserPic,

@@ -12,6 +12,7 @@ const CreatePost = () => {
 	const [userImage, setUserImage] = useState(UserImage);
 	const [userHeading, setUserHeading] = useState("");
 	const [content, setContent] = useState("");
+	const [college, setCollege] = useState("");
 	const [image, setImage] = useState(null);
 	useEffect(() => {
 		userAuth.onAuthStateChanged((user) => {
@@ -20,9 +21,10 @@ const CreatePost = () => {
 				const DocRef = doc(database, "ConnectInUsers", userId);
 				getDoc(DocRef)
 					.then((object) => {
-						setUserName(object.data().UserName);
+						setUserName(object.data().Username);
 						setUserImage(object.data().UserImage);
 						setUserHeading(object.data().Heading);
+						setCollege(object.data().College);
 					})
 					.catch((err) => {
 						console.log(err.message);
@@ -48,8 +50,10 @@ const CreatePost = () => {
 						addDoc(data, {
 							Username: userName,
 							UserImage: userImage,
-							UserHeading: userHeading,
+							Heading: userHeading,
 							ImageUrl: url,
+							College: college,
+							Like: 0,
 							Content: content.Content,
 							UserId: userId,
 							Date_posted: newDate,
