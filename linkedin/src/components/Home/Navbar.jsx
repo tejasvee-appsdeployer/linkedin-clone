@@ -77,18 +77,11 @@ const NavBar = () => {
 						>
 							<i className="fa-solid fa-bell"></i>Notifications
 						</Nav.Link>
+						<Nav.Link className="mx-auto text-center d-flex">
+							<Button className="rounded-pill nav-profile-btn" variant="outline-primary" onClick={() => {navigate(`/profile/${userId}`)}} > {" "} Profile{" "} </Button>
+						</Nav.Link>
 						<Nav.Link className="mx-2 text-center">
-							<Button
-								variant="danger"
-								onClick={() => {
-									signOut(userAuth).then(() => {
-										navigate("/signin");
-									});
-								}}
-							>
-								{" "}
-								Logout{" "}
-							</Button>
+							<Button variant="danger" onClick={() => { signOut(userAuth).then(() => {navigate("/signin"); }); }} > {" "} Logout{" "} </Button>
 						</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>

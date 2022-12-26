@@ -66,7 +66,7 @@ const UserProfile = () => {
 
 	const navigate = useNavigate();
 	const [updatedUser, setUpdatedUser] = useState(initialState);
-	const { UserName1, UserEmail1, UserImage1, Heading1, College1 } = updatedUser;
+	const { UserName1, UserEmail1, Heading1, College1 } = updatedUser;
 	const [showEditModal, setShowEditModal] = useState(false);
 	const handleEditModalClose = () => setShowEditModal(false);
 	const handleEditModalOpen = () => setShowEditModal(true);

@@ -18,3 +18,11 @@
 	height: 40px;
 	object-fit: cover;
 }
+.nav-profile-btn{
+	display: none;
+}
+@media (min-width: 0px) and (max-width: 426px) {
+	.nav-profile-btn{
+		display: block;
+	}
+}

@@ -1,31 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { userAuth, database } from "../../firebase";
+import React, { useState } from "react";
+import { database } from "../../firebase";
 import "./Feed.scss";
 import { Container } from "react-bootstrap";
-import UserImage from "../../Images/profile.jpg";
-import { collection, getDocs, getDoc, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const Feed = (props) => {
-	const [userName, setUserName] = useState("");
-	const [userImage, setUserImage] = useState(UserImage);
-	const [userId, setUserId] = useState(null);
-	useEffect(() => {
-		userAuth.onAuthStateChanged((user) => {
-			if (user) {
-				setUserId(user.uid);
-				const DocRef = doc(database, "ConnectInUsers", userId);
-				getDoc(DocRef)
-					.then((object) => {
-						setUserName(object.data().UserName);
-						setUserImage(object.data().UserImage);
-					})
-					.catch((err) => {
-						console.log(err.message);
-					});
-			}
-		});
-	}, []);
-
 	const [allPosts, setAllPosts] = useState([]);
 	const data = collection(database, "ConnectInPosts");
 
@@ -48,7 +27,7 @@ const Feed = (props) => {
 				<div key={index} className="feed-wrap">
 					<Container className="profile-wrap">
 						<Container className="d-flex">
-							<img src={userImage} className="btn-floating" alt="profile" />
+							<img src={object.UserImage} className="btn-floating" alt="profile" />
 							<div className="user-info">{object.Username}</div>
 						</Container>
 						<button className="btn btn-primary" id="follow-btn">
