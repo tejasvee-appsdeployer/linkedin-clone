@@ -38,9 +38,11 @@ const ProfileCard = () => {
 					<img src={userImage} className="" alt="profile" />
 				</div>
 				<div className="card-body">
-					<h4>{userName}</h4>
-					<h5>{userContent}</h5>
-					<div className="social">
+					<h4 className="text-capitalize">{userName}</h4>
+					<h5>{userContent? userContent:'Unknown'}</h5>
+					<div>{userCollege? userCollege:' College'}</div>
+					<br />
+					{/* <div className="social">
 						<SocialIcon
 							style={{ height: "35px", width: "35px" }}
 							className="social-icon"
@@ -61,8 +63,8 @@ const ProfileCard = () => {
 							className="social-icon"
 							network="google"
 						/>
-					</div>
-					<Link to={`/profile/:${userId}`} state={{UserName: userName, UserImage:userImage, Heading: userContent, College: userCollege}} class="btn btn-primary" id="viewprofile-btn" > View Profile </Link>
+					</div> */}
+					<Link to={`/profile/:${userId}`} state={{UserName: userName, UserImage:userImage, Heading: userContent, College: userCollege}} className="btn btn-primary" id="viewprofile-btn" > View Profile </Link>
 				</div>
 			</div>
 		</>

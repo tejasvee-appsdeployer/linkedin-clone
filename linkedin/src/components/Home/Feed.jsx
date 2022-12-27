@@ -30,7 +30,8 @@ const Feed = () => {
 		});
 	}, [searches])
 
-	
+	console.log(allPosts)
+
 	return (
 		<div className="feed-container">
 			{allPosts.map((object, index) => (
@@ -38,11 +39,11 @@ const Feed = () => {
 					<Container className="profile-wrap">
 						<Container className="d-flex">
 							<img src={object.UserImage} className="btn-floating" alt="profile" />
-							<div className="user-info"><Link className="Link" to={`/profile/:${object.UserId}`} state={object}>{object.Username}</Link></div>
+							<div className="user-info">
+								<Link className="Link text-capitalize" to={`/profile/:${object.UserId}`} state={object}>{object.Username}</Link>
+								<div className="text-capitalize">{object.Heading ? object.Heading :'unknown'}</div>
+							</div>
 						</Container>
-						<button className="btn btn-primary" id="follow-btn">
-							Follow
-						</button>
 					</Container>
 					<Container className="post-description my-2">
 						{object.Content}
@@ -51,7 +52,6 @@ const Feed = () => {
 						<img className="post-img" src={object.ImageUrl} alt="" />
 						<Container className="count-wrapper mt-1">
 							<div>{postLike} Likes</div>
-							<div>0 comments</div>
 						</Container>
 						<hr />
 					</Container>
@@ -67,14 +67,14 @@ const Feed = () => {
 								console.log("Chal rha hai")
 							})
 						}}>
-							<i class="fa-solid fa-thumbs-up"></i> Like
+							<i className="fa-solid fa-thumbs-up"></i> Like
+						</button>
+						{/* <button className="btn btn-success">
+							<i className="fa-solid fa-comment"></i> Comment
 						</button>
 						<button className="btn btn-success">
-							<i class="fa-solid fa-comment"></i> Comment
-						</button>
-						<button className="btn btn-success">
-							<i class="fa-sharp fa-solid fa-share"></i> Share
-						</button>
+							<i className="fa-sharp fa-solid fa-share"></i> Share
+						</button> */}
 					</Container>
 				</div>
 			))}

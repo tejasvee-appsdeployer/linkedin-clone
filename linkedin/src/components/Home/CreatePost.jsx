@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage, database, userAuth } from "../../firebase";
 import { collection, addDoc, getDoc, doc } from "firebase/firestore";
+import NewsCard from "./NewsCard";
 
 const CreatePost = () => {
 	const [userId, setUserId] = useState(null);
@@ -76,6 +77,7 @@ const CreatePost = () => {
 	};
 
 	return (
+		<div className="createpost-news-wrap">
 		<div className="createpost-wrap">
 			<div className="card">
 				<div className="card-header">Create a Post</div>
@@ -85,8 +87,8 @@ const CreatePost = () => {
 							<img src={userImage} alt="user-profile" />
 						</div>
 						<div className="name-post-visibility">
-							<span>{userName}</span>
-							<span>public</span>
+							<span className="text-capitalize">{userName}</span>
+							<span>Public</span>
 						</div>
 					</div>
 
@@ -100,7 +102,7 @@ const CreatePost = () => {
 							required
 						></textarea>
 						<label htmlFor="file-upload" className="btn btn-secondary">
-							Upload
+						<i class="fa-solid fa-upload"></i> 
 							<input
 								type="file"
 								name="file"
@@ -108,6 +110,7 @@ const CreatePost = () => {
 								onChange={(e) => setImage(e.target.files[0])}
 								required
 							/>
+							Upload Image
 						</label>
 						<button
 							id="post-btn"
@@ -120,6 +123,9 @@ const CreatePost = () => {
 				</div>
 			</div>
 		</div>
+		<NewsCard/>
+		</div>
+
 	);
 };
 

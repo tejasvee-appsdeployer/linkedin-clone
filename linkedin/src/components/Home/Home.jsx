@@ -13,6 +13,7 @@ import UserImage from "../../Images/User.png";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../firebase";
 import SearchContext from "../../context/SearchContext";
+import NewsCard from "./NewsCard";
 
 const Home = () => {
 	const [search, setSearch] = useState("");
@@ -195,6 +196,7 @@ const Home = () => {
 					<ProfileCard />
 					<Feed/>
 					<CreatePost />
+				
 				</div>
 			</div>
 		</>
