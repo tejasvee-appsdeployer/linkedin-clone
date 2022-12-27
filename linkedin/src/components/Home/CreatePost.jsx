@@ -6,8 +6,10 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage, database, userAuth } from "../../firebase";
 import { collection, addDoc, getDoc, doc } from "firebase/firestore";
 import NewsCard from "./NewsCard";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
+	const navigate = useNavigate()
 	const [userId, setUserId] = useState(null);
 	const [userName, setUserName] = useState("");
 	const [userImage, setUserImage] = useState(UserImage);

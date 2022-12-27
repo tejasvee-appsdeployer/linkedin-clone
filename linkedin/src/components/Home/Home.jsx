@@ -128,7 +128,7 @@ const Home = () => {
 						placeholder="Search by UserName..."
 						onChange={(e) => setSearch(e.target.value)}
 					/>
-					<button className="btn btn-outline-light" onClick={handleSearch}>
+					<button className="btn btn-outline-light mx-2" onClick={handleSearch}>
 						Search
 					</button>
 					<button
